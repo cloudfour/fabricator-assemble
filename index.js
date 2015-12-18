@@ -11,7 +11,7 @@ var mkdirp = require('mkdirp');
 var path = require('path');
 var sortObj = require('sort-object');
 var yaml = require('js-yaml');
-var Handlebars;
+var Handlebars = require('handlebars');
 
 
 /**
@@ -102,7 +102,7 @@ var defaults = {
     /**
      * Handlebars instance to use
      */
-    handlebars: require('handlebars')
+    handlebars: Handlebars
 };
 
 
