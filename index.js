@@ -4,7 +4,6 @@ var beautifyHtml = require('js-beautify').html;
 var chalk = require('chalk');
 var fs = require('fs');
 var globby = require('globby');
-var Handlebars = require('handlebars');
 var inflect = require('i')();
 var matter = require('gray-matter');
 var md = require('markdown-it')({ html: true, linkify: true });
@@ -12,6 +11,7 @@ var mkdirp = require('mkdirp');
 var path = require('path');
 var sortObj = require('sort-object');
 var yaml = require('js-yaml');
+var Handlebars;
 
 
 /**
@@ -97,7 +97,12 @@ var defaults = {
 	 * Whether or not to log errors to console
 	 * @type {Boolean}
 	 */
-	logErrors: false
+	logErrors: false,
+
+    /**
+     * Handlebars instance to use
+     */
+    handlebars: require('handlebars')
 };
 
 
@@ -580,6 +585,9 @@ var setup = function (userOptions) {
 
 	// merge user options with defaults
 	options = _.merge({}, defaults, userOptions);
+
+    // set Handlebars reference used by multiple functions below
+    Handlebars = options.handlebars;
 
 	// setup steps
 	registerHelpers();
