@@ -4,6 +4,7 @@ var beautifyHtml = require('js-beautify').html;
 var chalk = require('chalk');
 var fs = require('fs');
 var globby = require('globby');
+var Handlebars = require('handlebars');
 var inflect = require('i')();
 var matter = require('gray-matter');
 var md = require('markdown-it')({ html: true, linkify: true });
@@ -11,7 +12,6 @@ var mkdirp = require('mkdirp');
 var path = require('path');
 var sortObj = require('sort-object');
 var yaml = require('js-yaml');
-var Handlebars = require('handlebars');
 
 
 /**
