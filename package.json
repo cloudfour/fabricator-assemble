@@ -18,7 +18,7 @@
   "repository": "fbrctr/fabricator-assemble",
   "dependencies": {
     "chalk": "^1.0.0",
-    "globby": "^2.1.0",
+    "globby": "^3.0.0",
     "gray-matter": "^2.0.1",
     "handlebars": "^3.0.3",
     "i": "^0.3.3",
